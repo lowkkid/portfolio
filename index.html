@@ -7,13 +7,79 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
+    <script defer src="./script/script.js"></script>
 </head>
 <body>
+<header class="header">
+    <div></div>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#hero">Home</a></li>
+            <li class="nav-item"><a href="#about">About me</a></li>
+            <li class="nav-item"><a href="#projects">Projects</a></li>
+            <li class="nav-item"><a href="#contact">Contact me</a></li>
+        </ul>
+    </nav>
+    <a href="#contact" class="button button--primary">Hire me</a>
+</header>
 
-<h1>JAVA DEVELOPER</h1>
+<section class="hero" id="hero">
+    <div class="hero__content">
+        <div class="hero__body">
+            <div class="hero__header">
+                <div class="hero__text">
+                    <div class="hero__intro">
+                        <span class="hero__greeting">Hi! I am</span>
+                        <h1 class="hero__name">Vladislav Shikunov</h1>
+                    </div>
+
+                    <h2 class="hero__title">Senior Java Developer (Full Stack + DevOps)</h2>
+                </div>
+
+                <ul class="hero__links">
+                    <li class="hero__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/uladzislau-shykunou/">
+                            <img class="hero__icon" src="./img/linkedin.png" alt="LinkedIn">
+                        </a>
+                    </li>
+                    <li class="hero__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/lowkkid">
+                            <img class="hero__icon" src="./img/git.png" alt="Github">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hero__actions">
+                <a class="button button--primary">Hire Me</a>
+                <button class="button button--download">Download CV</button>
+            </div>
+        </div>
+
+        <div class="hero__stats">
+            <div class="hero__stat">
+                <span class="hero__stat-number">5+</span>
+                <span class="hero__stat-text">Years of experiences</span>
+            </div>
+            <div class="hero__stat">
+                <span class="hero__stat-number">10+</span>
+                <span class="hero__stat-text">Projects delivered</span>
+            </div>
+            <div class="hero__stat">
+                <span class="hero__stat-number">100%</span>
+                <span class="hero__stat-text">Client satisfaction</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hero__image">
+        <img src="img/me.png" alt="Vladislav Shikunov" class="hero__img">
+    </div>
+</section>
+
 
 </body>
 </html>

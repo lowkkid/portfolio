@@ -1,0 +1,15 @@
+.header {
+  max-width: 90%;
+
+  margin: 30px auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 60px;
+}

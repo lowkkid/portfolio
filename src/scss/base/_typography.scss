@@ -3,17 +3,24 @@
 
 body {
   font-family: v.$font-family-main;
-  font-size: f.rem(16px);
+  font-size: f.rem(16);
   letter-spacing: 0.03em;
   vertical-align: top;
+  color: v.$white-dark-active;
 }
 
 h1 {
+  font-size: f.rem(28);
+  font-weight: 700;
+  color: v.$white-dark-hover;
+}
+
+h2 {
   font-weight: 900;
-  font-size: f.rem(70px);
+  font-size: f.rem(70);
 
   background: linear-gradient(
-                  45deg,
+                  90deg,
                   #984300 0%,
                   #FD6F00 46%,
                   #CA5900 100%
@@ -24,18 +31,29 @@ h1 {
   color: transparent;
 }
 
-h2 {
+h3 {
   font-weight: bold;
-  font-size: f.rem(40px);
+  font-size: f.rem(40);
   color: v.$white-light;
 }
 
 nav ul {
   font-weight: 500;
-  font-size: f.rem(20px);
+  font-size: f.rem(20);
   color: v.$white-dark-hover;
 
   &--active {
     color: v.$orange-normal;
   }
+}
+
+.button {
+  font-weight: 700;
+  font-size: f.rem(20);
+  color: v.$white-dark-hover;
+  display: inline-block;
+}
+
+.header .button {
+  font-size: f.rem(16);
 }

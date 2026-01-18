@@ -1,0 +1,19 @@
+  @use "../abstracts/variables" as v;
+
+  .button {
+    border-radius: 8px;
+    padding: 12px 40px;
+    cursor: pointer;
+
+    &--primary {
+      background: linear-gradient(90deg, #FD6F00 0%, #E46400 100%);
+      background-clip: padding-box;
+      color: v.$white-lightest;
+      border: 2px transparent solid;
+    }
+
+    &--download {
+      background-color: transparent;
+      border: 2px solid v.$white-dark-hover;
+    }
+  }

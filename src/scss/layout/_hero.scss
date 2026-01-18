@@ -1,0 +1,120 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
+@use "../abstracts/variables" as v;
+
+
+.hero {
+  max-width: 90%;
+  margin: 30px auto;
+  @include m.flex-row;
+  justify-content: space-around;
+  align-items: center;
+
+  &__content {
+    @include m.flex-column;
+    align-items: flex-start;
+    gap: 80px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 749px;
+      height: 677px;
+
+      background-color: v.$orange-normal;
+      opacity: 0.5;
+      z-index: -1;
+      pointer-events: none;
+      mask-image: url("/img/vector.png");
+      -webkit-mask-image: url("/img/vector.png");
+
+    }
+  }
+
+  &__title {
+    max-width: 600px;
+  }
+
+  &__body {
+    @include m.flex-column;
+    gap: 60px;
+  }
+
+  &__header {
+    @include m.flex-column;
+    gap: 32px;
+  }
+
+  &__text {
+    @include m.flex-column;
+    gap: 24px;
+  }
+
+  &__intro {
+    @include m.flex-column;
+    gap:10px;
+  }
+
+  &__greeting {
+    font-size: f.rem(24);
+  }
+
+  &__links {
+    @include m.flex-row;
+    gap: 20px;
+  }
+
+  &__icon {
+    height: 40px;
+    width: 40px;
+  }
+
+  &__image {
+    max-width: 50%;
+    min-width: 30%;
+
+    @include m.flex-center;
+
+  }
+
+  &__img {
+  }
+
+  &__stats {
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.04);
+    padding: 24px;
+    @include m.flex-row;
+    gap: 30px;
+
+    & > *:not(:last-child) {
+      padding-right: 30px;
+      border-right: 1px solid v.$white-dark-hover;
+
+    }
+  }
+
+  &__stat {
+    padding-block: 6px;
+    @include m.flex-column;
+    gap: 8px;
+
+    &-number {
+      color: v.$orange-normal;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    &-text {
+      color: v.$white-normal-hover;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+
+
+
+
+
+}
