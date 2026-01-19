@@ -11,12 +11,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Transfer Docker image to server
+      - name: Transfer to server
         uses: appleboy/scp-action@v1
         with:
-          host: ${{ env.SERVER_HOST }}
-          username: ${{ env.SERVER_USER }}
-          key: ${{ env.SERVER_SSH_KEY }}
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
           source: "index.html, script/*, img/*, css/*"
-          target: ${{ env.SERVER_DEPLOY_PATH }}
+          target: ${{ secrets.SERVER_DEPLOY_PATH }}
 
