@@ -1,0 +1,22 @@
+name: Deploy to Server
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Transfer Docker image to server
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ env.SERVER_HOST }}
+          username: ${{ env.SERVER_USER }}
+          key: ${{ env.SERVER_SSH_KEY }}
+          source: "index.html, script/*, img/*, css/*"
+          target: ${{ env.SERVER_DEPLOY_PATH }}
+
