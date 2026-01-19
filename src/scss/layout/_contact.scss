@@ -1,0 +1,13 @@
+@use "../abstracts/mixins" as m;
+
+.contact {
+  width: 90%;
+  margin: 0 auto;
+  @include m.flex-column;
+  align-items: center;
+
+  &__form {
+    align-self: stretch;
+    @include m.flex-center;
+  }
+}

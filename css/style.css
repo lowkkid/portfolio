@@ -67,12 +67,6 @@ h2 {
   color: transparent;
 }
 
-h3 {
-  font-weight: bold;
-  font-size: 2.5rem;
-  color: #FEFEFE;
-}
-
 nav ul {
   font-weight: 500;
   font-size: 1.25rem;
@@ -95,6 +89,12 @@ nav ul--active {
 
 body {
   background-color: #121212;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
 }
 
 .header {
@@ -209,6 +209,28 @@ body {
   font-size: 16px;
 }
 
+.about {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact__form {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .button {
   border-radius: 8px;
   padding: 12px 40px;
@@ -220,9 +242,66 @@ body {
   color: #FFFFFF;
   border: 2px transparent solid;
 }
-.button--download {
+.button--secondary {
   background-color: transparent;
   border: 2px solid #959595;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #FEFEFE;
+}
+.section-title__description {
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #707070;
+}
+
+.form {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.form__input, .form__textarea {
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 20px;
+  color: #FEFEFE;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  outline: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.form__input::placeholder, .form__textarea::placeholder {
+  color: #6b6b6b;
+}
+.form__input:hover, .form__textarea:hover {
+  background-color: #232323;
+}
+.form__input:focus, .form__textarea:focus {
+  background-color: #252525;
+}
+.form__input:focus {
+  transform: scale(1.02);
+}
+.form__textarea {
+  resize: vertical;
+  min-height: 120px;
+  width: 100%;
+}
+.form__submit {
+  align-self: center;
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

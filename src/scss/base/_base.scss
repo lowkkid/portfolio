@@ -1,5 +1,11 @@
 @use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
 
 body {
   background-color: v.$background;
+}
+
+main {
+  @include m.flex-column;
+  gap: 150px;
 }

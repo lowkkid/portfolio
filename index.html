@@ -26,59 +26,94 @@
     <a href="#contact" class="button button--primary">Hire me</a>
 </header>
 
-<section class="hero" id="hero">
-    <div class="hero__content">
-        <div class="hero__body">
-            <div class="hero__header">
-                <div class="hero__text">
-                    <div class="hero__intro">
-                        <span class="hero__greeting">Hi! I am</span>
-                        <h1 class="hero__name">Vladislav Shikunov</h1>
+<main>
+    <section class="hero" id="hero">
+        <div class="hero__content">
+            <div class="hero__body">
+                <div class="hero__header">
+                    <div class="hero__text">
+                        <div class="hero__intro">
+                            <span class="hero__greeting">Hi! I am</span>
+                            <h1 class="hero__name">Vladislav Shikunov</h1>
+                        </div>
+
+                        <h2 class="hero__title">Senior Java Developer (Full Stack + DevOps)</h2>
                     </div>
 
-                    <h2 class="hero__title">Senior Java Developer (Full Stack + DevOps)</h2>
+                    <ul class="hero__links">
+                        <li class="hero__link">
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://www.linkedin.com/in/uladzislau-shykunou/">
+                                <img class="hero__icon" src="./img/linkedin.png" alt="LinkedIn">
+                            </a>
+                        </li>
+                        <li class="hero__link">
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/lowkkid">
+                                <img class="hero__icon" src="./img/git.png" alt="Github">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+                <div class="hero__actions">
+                    <a class="button button--primary">Hire Me</a>
+                    <button class="button button--secondary button--download">Download CV</button>
+                </div>
+            </div>
 
-                <ul class="hero__links">
-                    <li class="hero__link">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/uladzislau-shykunou/">
-                            <img class="hero__icon" src="./img/linkedin.png" alt="LinkedIn">
-                        </a>
-                    </li>
-                    <li class="hero__link">
-                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/lowkkid">
-                            <img class="hero__icon" src="./img/git.png" alt="Github">
-                        </a>
-                    </li>
-                </ul>
+            <div class="hero__stats">
+                <div class="hero__stat">
+                    <span class="hero__stat-number">5+</span>
+                    <span class="hero__stat-text">Years of experiences</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number">10+</span>
+                    <span class="hero__stat-text">Projects delivered</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number">100%</span>
+                    <span class="hero__stat-text">Client satisfaction</span>
+                </div>
             </div>
-            <div class="hero__actions">
-                <a class="button button--primary">Hire Me</a>
-                <button class="button button--download">Download CV</button>
-            </div>
+
         </div>
 
-        <div class="hero__stats">
-            <div class="hero__stat">
-                <span class="hero__stat-number">5+</span>
-                <span class="hero__stat-text">Years of experiences</span>
-            </div>
-            <div class="hero__stat">
-                <span class="hero__stat-number">10+</span>
-                <span class="hero__stat-text">Projects delivered</span>
-            </div>
-            <div class="hero__stat">
-                <span class="hero__stat-number">100%</span>
-                <span class="hero__stat-text">Client satisfaction</span>
-            </div>
+        <div class="hero__image">
+            <img src="img/me.png" alt="Vladislav Shikunov" class="hero__img">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h3 class="section-title">About me</h3>
+        <p class="section-title__description">T-Shape Software Engineer with 5+ years of experience in design,
+            development and deployment, risk assessment, performance optimization, support, code review and
+            mentoring.</p>
+    </section>
+
+    <!--    <section class="projects" id="projects">-->
+    <!--        <h3 class="section-title">Projects</h3>-->
+    <!--        <p class="section-title__description">Senior Java Developer (Full-stack + React)</p>-->
+    <!--    </section>-->
+
+    <section class="contact" id="contact">
+        <h3 class="section-title">Contact me</h3>
+        <p class="section-title__description">Cultivating Connections: Reach Out and Connect with Me</p>
+        <div class="contact__form">
+            <form class="form">
+                <div class="form__row">
+                    <input class="form__input" type="text" name="name" placeholder="Name" required>
+                    <input class="form__input" type="email" name="email " placeholder="Email" required>
+                </div>
+                <div class="form__row">
+                    <input class="form__input" type="text" name="phone" placeholder="Phone Number (Optional)">
+                    <input class="form__input" type="text" name="timeline" placeholder="Timeline">
+                </div>
+                <textarea class="form__textarea" placeholder="Message"></textarea>
+                <button type="submit" class="button button--secondary form__submit">Send Message</button>
+            </form>
         </div>
 
-    </div>
-
-    <div class="hero__image">
-        <img src="img/me.png" alt="Vladislav Shikunov" class="hero__img">
-    </div>
-</section>
+    </section>
+</main>
 
 
 </body>
