@@ -304,4 +304,114 @@ main {
   margin-top: 20px;
 }
 
+.toast-container {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 24px 40px;
+  color: #FEFEFE;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transform: translateY(-100px);
+  opacity: 0;
+  animation: toast-slide-in 0.4s ease forwards;
+}
+.toast--success {
+  border-top: 4px solid #5bb543;
+}
+.toast--error {
+  border-top: 4px solid #e74c3c;
+}
+.toast__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toast__icon svg {
+  width: 40px;
+  height: 40px;
+}
+.toast--hiding {
+  animation: toast-slide-out 0.4s ease forwards;
+}
+
+.success-checkmark {
+  width: 40px;
+  height: 40px;
+}
+.success-checkmark .circle {
+  fill-opacity: 0;
+  stroke: #219a00;
+  stroke-width: 16px;
+  transform-origin: center;
+  transform: scale(0);
+  animation: grow 1s cubic-bezier(0.25, 0.25, 0.25, 1.25) forwards;
+}
+.success-checkmark .tick {
+  stroke-opacity: 0;
+  stroke-dasharray: 29px;
+  stroke-dashoffset: 29px;
+  animation: draw 0.5s cubic-bezier(0.25, 0.25, 0.25, 1) forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes grow {
+  60% {
+    transform: scale(0.8);
+    stroke-width: 4px;
+    fill-opacity: 0;
+  }
+  100% {
+    transform: scale(0.9);
+    stroke-width: 8px;
+    fill-opacity: 1;
+    fill: #219a00;
+  }
+}
+@keyframes draw {
+  0%, 100% {
+    stroke-opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes toast-slide-in {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes toast-slide-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

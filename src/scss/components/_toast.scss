@@ -1,0 +1,122 @@
+@use "../abstracts/variables" as *;
+
+$toast-bg: #1e1e1e;
+$toast-success: #5bb543;
+$toast-success-stroke: #219a00;
+$toast-error: #e74c3c;
+
+.toast-container {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.toast {
+    background-color: $toast-bg;
+    border-radius: 12px;
+    padding: 24px 40px;
+    color: $white-light;
+    font-family: $font-family-main;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    transform: translateY(-100px);
+    opacity: 0;
+    animation: toast-slide-in 0.4s ease forwards;
+
+    &--success {
+        border-top: 4px solid $toast-success;
+    }
+
+    &--error {
+        border-top: 4px solid $toast-error;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &--hiding {
+        animation: toast-slide-out 0.4s ease forwards;
+    }
+}
+
+.success-checkmark {
+    width: 40px;
+    height: 40px;
+
+    .circle {
+        fill-opacity: 0;
+        stroke: $toast-success-stroke;
+        stroke-width: 16px;
+        transform-origin: center;
+        transform: scale(0);
+        animation: grow 1s cubic-bezier(.25, .25, .25, 1.25) forwards;
+    }
+
+    .tick {
+        stroke-opacity: 0;
+        stroke-dasharray: 29px;
+        stroke-dashoffset: 29px;
+        animation: draw .5s cubic-bezier(.25, .25, .25, 1) forwards;
+        animation-delay: .6s;
+    }
+}
+
+@keyframes grow {
+    60% {
+        transform: scale(.8);
+        stroke-width: 4px;
+        fill-opacity: 0;
+    }
+    100% {
+        transform: scale(.9);
+        stroke-width: 8px;
+        fill-opacity: 1;
+        fill: $toast-success-stroke;
+    }
+}
+
+@keyframes draw {
+    0%, 100% { stroke-opacity: 1; }
+    100% { stroke-dashoffset: 0; }
+}
+
+@keyframes toast-slide-in {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toast-slide-out {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
