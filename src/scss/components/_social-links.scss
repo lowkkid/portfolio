@@ -1,0 +1,12 @@
+@use "../abstracts/mixins" as m;
+
+.social-links {
+  @include m.flex-row;
+  gap: 20px;
+
+  &__icon {
+    height: 40px;
+    width: 40px;
+  }
+}
+

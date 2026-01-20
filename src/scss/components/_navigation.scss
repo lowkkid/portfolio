@@ -1,0 +1,20 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+
+.navigation {
+
+  &__list {
+    @include m.flex-row;
+    gap: 60px;
+    font-weight: 500;
+    font-size: f.rem(20);
+    color: v.$white-dark-hover;
+
+  }
+
+  &__item:hover {
+    color: v.$orange-normal;
+  }
+
+}

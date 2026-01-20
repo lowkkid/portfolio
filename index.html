@@ -15,12 +15,20 @@
 <body>
 <header class="header">
     <div></div>
-    <nav class="nav">
-        <ul class="nav-list">
-            <li class="nav-item"><a href="#hero">Home</a></li>
-            <li class="nav-item"><a href="#about">About me</a></li>
-            <li class="nav-item"><a href="#projects">Projects</a></li>
-            <li class="nav-item"><a href="#contact">Contact me</a></li>
+    <nav class="navigation" aria-label="Header navigation">
+        <ul class="navigation__list">
+            <li class="navigation__item">
+                <a class="navigation__link" href="#hero">Home</a>
+            </li>
+            <li class="navigation__item">
+                <a class="navigation__link" href="#about">About me</a>
+            </li>
+            <li class="navigation__item">
+                <a class="navigation__link" href="#projects">Projects</a>
+            </li>
+            <li class="navigation__item">
+                <a class="navigation__link" href="#contact">Contact me</a>
+            </li>
         </ul>
     </nav>
     <a href="#contact" class="button button--primary">Hire me</a>
@@ -40,16 +48,25 @@
                         <h2 class="hero__title">Senior Java Developer (Full Stack + DevOps)</h2>
                     </div>
 
-                    <ul class="hero__links">
-                        <li class="hero__link">
-                            <a target="_blank" rel="noopener noreferrer"
+                    <ul class="social-links">
+                        <li class="social-links__item">
+                            <a class="social-links__link"
+                               target="_blank"
+                               rel="noopener noreferrer"
                                href="https://www.linkedin.com/in/uladzislau-shykunou/">
-                                <img class="hero__icon" src="./img/linkedin.png" alt="LinkedIn">
+                                <img class="social-links__icon"
+                                     src="./img/linkedin.png"
+                                     alt="LinkedIn">
                             </a>
                         </li>
-                        <li class="hero__link">
-                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/lowkkid">
-                                <img class="hero__icon" src="./img/git.png" alt="Github">
+                        <li class="social-links__item">
+                            <a class="social-links__link"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               href="https://github.com/lowkkid">
+                                <img class="social-links__icon"
+                                     src="./img/git.png"
+                                     alt="Github">
                             </a>
                         </li>
                     </ul>
@@ -115,6 +132,56 @@
     </section>
 </main>
 
+<footer class="footer">
+    <nav class="navigation" aria-label="Footer navigation">
+        <ul class="navigation__list">
+            <li class="navigation__item">
+                <a class="navigation__link" href="#hero">Home</a>
+            </li>
+            <li class="navigation__item">
+                <a class="navigation__link" href="#about">About me</a>
+            </li>
+            <li class="navigation__item">
+                <a class="navigation__link" href="#projects">Projects</a>
+            </li>
+            <li class="navigation__item">
+                <a class="navigation__link" href="#contact">Contact me</a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="social-links">
+        <li class="social-links__item">
+            <a class="social-links__link"
+               target="_blank"
+               rel="noopener noreferrer"
+               href="https://www.linkedin.com/in/uladzislau-shykunou/">
+                <img class="social-links__icon"
+                     src="./img/linkedin.png"
+                     alt="LinkedIn">
+            </a>
+        </li>
+        <li class="social-links__item">
+            <a class="social-links__link"
+               target="_blank"
+               rel="noopener noreferrer"
+               href="https://github.com/lowkkid">
+                <img class="social-links__icon"
+                     src="./img/git.png"
+                     alt="Github">
+            </a>
+        </li>
+    </ul>
+    <ul class="contacts-list">
+        <li class="contacts-list__item">
+            <img class="contacts-list__icon" src="./img/mail.png" alt="Mail">
+            <a class="contacts-list__link" href="mailto:vladislav.shikunov@lowkkid.dev">vladislav.shikunov@lowkkid.dev</a>
+        </li>
+        <li class="contacts-list__item">
+            <img class="contacts-list__icon" src="./img/phone.png" alt="Phone">
+            <a class="contacts-list__link" href="tel:+375336540079">+375 33 654 0079</a>
+        </li>
+    </ul>
+</footer>
 
 </body>
 </html>

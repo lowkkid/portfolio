@@ -1,0 +1,12 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+
+.footer {
+  padding: 40px 80px 24px 80px;
+  background-color: rgba(255, 255, 255, 0.04);
+
+  @include m.flex-column;
+  align-items: center;
+  gap: 50px;
+}

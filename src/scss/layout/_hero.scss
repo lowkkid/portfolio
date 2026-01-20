@@ -60,16 +60,6 @@
     font-size: f.rem(24);
   }
 
-  &__links {
-    @include m.flex-row;
-    gap: 20px;
-  }
-
-  &__icon {
-    height: 40px;
-    width: 40px;
-  }
-
   &__image {
     max-width: 50%;
     min-width: 30%;

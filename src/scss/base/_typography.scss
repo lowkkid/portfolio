@@ -31,16 +31,6 @@ h2 {
   color: transparent;
 }
 
-nav ul {
-  font-weight: 500;
-  font-size: f.rem(20);
-  color: v.$white-dark-hover;
-
-  &--active {
-    color: v.$orange-normal;
-  }
-}
-
 .button {
   font-weight: 700;
   font-size: f.rem(20);

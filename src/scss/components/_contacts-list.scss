@@ -1,0 +1,26 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
+@use "../abstracts/variables" as v;
+
+.contacts-list {
+  @include m.flex-row;
+  gap: 40px;
+
+  &__item {
+    @include m.flex-row;
+    gap: 14px;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: f.rem(20);
+    color: v.$white-dark-hover;
+    text-decoration: underline;
+  }
+}
