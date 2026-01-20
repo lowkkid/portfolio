@@ -1,0 +1,21 @@
+@use "../abstracts/mixins" as m;
+
+.services {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 4rem 0;
+  @include m.flex-column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 80%;
+  @include m.mobile {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}

@@ -5,11 +5,13 @@
 @use "layout/header";
 @use "layout/hero";
 @use "layout/about";
+@use "layout/services";
 @use "layout/contact";
 @use "layout/footer";
 
 @use "components/button";
-@use "components/section-title";
+@use "components/section-header";
+@use "components/service-card";
 @use "components/form";
 @use "components/toast";
 @use "components/social-links";
