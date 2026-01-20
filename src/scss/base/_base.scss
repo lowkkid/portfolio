@@ -3,9 +3,12 @@
 
 body {
   background-color: v.$background;
+  padding-top: 30px;
+  @include m.flex-column;
+  gap: 50px;
 }
 
 main {
   @include m.flex-column;
-  gap: 150px;
+  gap: 100px;
 }

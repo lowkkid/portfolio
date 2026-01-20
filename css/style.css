@@ -80,26 +80,60 @@ h2 {
 
 body {
   background-color: #121212;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  gap: 150px;
+  gap: 100px;
 }
 
 .header {
-  max-width: 90%;
-  margin: 30px auto;
+  width: 70%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
+  gap: 60px;
+}
+.header > div:first-child {
+  flex-shrink: 0;
+  width: 0;
+}
+.header .navigation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.header .button {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 5%;
+  }
+  .header > div:first-child {
+    display: none;
+  }
+  .header .navigation {
+    width: 100%;
+  }
+  .header .button {
+    margin-left: 0;
+    width: 100%;
+  }
 }
 
 .hero {
   max-width: 90%;
-  margin: 30px auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -192,6 +226,153 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 60px;
+}
+.about__content {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.about__image {
+  flex: 0 0 40%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .about__image {
+    flex: 0 0 auto;
+    max-width: 300px;
+  }
+}
+.about__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.about__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.about__paragraph {
+  line-height: 1.7;
+  color: #959595;
+  font-size: 20px;
+}
+.about__paragraph strong {
+  color: #FD6F00;
+  font-weight: 700;
+}
+
+.skills {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+.skills__content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.skills__category {
+  border: 1px solid #575757;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+.skills__category:hover {
+  border-color: #FD6F00;
+}
+.skills__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+.skills__header:hover {
+  background-color: rgba(253, 111, 0, 0.1);
+}
+.skills__header.active {
+  background-color: rgba(253, 111, 0, 0.05);
+}
+.skills__header.active .skills__icon {
+  transform: rotate(45deg);
+  color: #FD6F00;
+}
+.skills__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .skills__title {
+    font-size: 28px;
+  }
+}
+.skills__icon {
+  font-size: 32px;
+  color: #BABABA;
+  font-weight: 300;
+  transition: transform 0.3s ease, color 0.3s ease;
+  line-height: 1;
+}
+.skills__list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.skills__list.active {
+  max-height: 1000px;
+  padding: 20px 30px 20px 30px;
+}
+.skills__item {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: rgba(87, 87, 87, 0.2);
+  color: #FEFEFE;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.skills__item:hover {
+  background-color: rgba(253, 111, 0, 0.2);
+  color: #FD6F00;
+  transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+  .skills__item {
+    font-size: 18px;
+    padding: 10px 18px;
+  }
 }
 
 .services {
@@ -206,14 +387,14 @@ main {
 
 .services__grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
   width: 80%;
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .services__grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 

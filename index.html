@@ -24,6 +24,9 @@
                 <a class="navigation__link" href="#about">About me</a>
             </li>
             <li class="navigation__item">
+                <a class="navigation__link" href="#skills">Skills</a>
+            </li>
+            <li class="navigation__item">
                 <a class="navigation__link" href="#services">Services</a>
             </li>
             <li class="navigation__item">
@@ -32,6 +35,8 @@
         </ul>
     </nav>
     <a href="#contact" class="button button--primary">Hire me</a>
+    <div></div>
+
 </header>
 
 <main>
@@ -102,10 +107,117 @@
     <section class="about" id="about">
         <header class="section-header">
             <h3 class="section-header__title">About me</h3>
-            <p class="section-header__description">T-Shape Software Engineer with 5+ years of experience in design,
-                development and deployment, risk assessment, performance optimization, support, code review and
-                mentoring.</p>
+            <p class="section-header__description">Backend expert with practical
+                frontend and DevOps skills for end-to-end delivery</p>
         </header>
+
+        <div class="about__content">
+            <div class="about__image">
+                <img src="img/me.png" alt="Vladislav Shikunov" class="about__img">
+            </div>
+
+            <div class="about__text">
+                <p class="about__paragraph">
+                    T-Shaped Java Developer with <strong>5.5 years of commercial experience</strong> delivering robust, scalable
+                    applications in Agile environments. Worked in teams ranging from 4 to 20 members, both remotely
+                    and on-site, managing the full development cycle from gathering requirements to establishing fully
+                    automated release processes.
+                </p>
+
+                <p class="about__paragraph">
+                    Extensive experience in developing and maintaining <strong>high-load, scalable backend
+                    systems</strong>, including performance optimization and ensuring system resilience under peak
+                    traffic. Established CI/CD pipelines with high test coverage and detailed analytics for production
+                    monitoring.
+                </p>
+
+                <p class="about__paragraph">
+                    As a <strong>T-shaped engineer</strong>, combines deep Java expertise with practical knowledge in
+                    <strong>React frontend development</strong> and <strong>DevOps practices</strong>. Handles the complete software development lifecycle
+                    independently and deliver end-to-end solutions.
+                </p>
+
+                <p class="about__paragraph">
+                    Gained hands-on experience with AI integration for intelligent features, always staying current
+                    with emerging technologies while maintaining a focus on delivering reliable, production-ready
+                    solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <header class="section-header">
+            <h3 class="section-header__title">Skills</h3>
+            <p class="section-header__description">Technical expertise across the full development stack</p>
+        </header>
+
+        <div class="skills__content">
+            <div class="skills__category">
+                <div class="skills__header" data-category="backend">
+                    <h4 class="skills__title">Backend</h4>
+                    <span class="skills__icon">+</span>
+                </div>
+                <div class="skills__list" data-list="backend">
+                    <span class="skills__item">Java 8-21</span>
+                    <span class="skills__item">Spring Framework</span>
+                    <span class="skills__item">JPA</span>
+                    <span class="skills__item">Hibernate</span>
+                    <span class="skills__item">Microservices</span>
+                    <span class="skills__item">PostgreSQL</span>
+                    <span class="skills__item">Oracle</span>
+                    <span class="skills__item">Apache Kafka</span>
+                    <span class="skills__item">RabbitMQ</span>
+                    <span class="skills__item">JWT</span>
+                    <span class="skills__item">OAuth2</span>
+                    <span class="skills__item">REST API</span>
+                    <span class="skills__item">JUnit5</span>
+                    <span class="skills__item">Mockito</span>
+                    <span class="skills__item">Maven</span>
+                    <span class="skills__item">Gradle</span>
+                    <span class="skills__item">MongoDB</span>
+                    <span class="skills__item">Redis</span>
+                    <span class="skills__item">Swagger/OpenAPI</span>
+                    <span class="skills__item">JDBC</span>
+                    <span class="skills__item">JSP</span>
+                    <span class="skills__item">Servlets</span>
+                </div>
+            </div>
+
+            <div class="skills__category">
+                <div class="skills__header" data-category="frontend">
+                    <h4 class="skills__title">Frontend</h4>
+                    <span class="skills__icon">+</span>
+                </div>
+                <div class="skills__list" data-list="frontend">
+                    <span class="skills__item">JavaScript</span>
+                    <span class="skills__item">React</span>
+                    <span class="skills__item">React Router</span>
+                    <span class="skills__item">Tailwind CSS</span>
+                    <span class="skills__item">SASS</span>
+                </div>
+            </div>
+
+            <div class="skills__category">
+                <div class="skills__header" data-category="devops">
+                    <h4 class="skills__title">DevOps & Other</h4>
+                    <span class="skills__icon">+</span>
+                </div>
+                <div class="skills__list" data-list="devops">
+                    <span class="skills__item">Docker</span>
+                    <span class="skills__item">AWS</span>
+                    <span class="skills__item">Nginx</span>
+                    <span class="skills__item">Linux</span>
+                    <span class="skills__item">Camunda</span>
+                    <span class="skills__item">Loki</span>
+                    <span class="skills__item">Grafana</span>
+                    <span class="skills__item">MinIO</span>
+                    <span class="skills__item">Postman</span>
+                    <span class="skills__item">Git</span>
+                    <span class="skills__item">SonarQube</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="services" id="services">
@@ -172,11 +284,6 @@
         </div>
     </section>
 
-    <!--    <section class="projects" id="projects">-->
-    <!--        <h3 class="section-title">Projects</h3>-->
-    <!--        <p class="section-title__description">Senior Java Developer (Full-stack + React)</p>-->
-    <!--    </section>-->
-
     <section class="contact" id="contact">
         <header class="section-header">
             <h3 class="section-header__title">Contact me</h3>
@@ -209,6 +316,9 @@
             </li>
             <li class="navigation__item">
                 <a class="navigation__link" href="#about">About me</a>
+            </li>
+            <li class="navigation__item">
+                <a class="navigation__link" href="#skills">Skills</a>
             </li>
             <li class="navigation__item">
                 <a class="navigation__link" href="#services">Services</a>

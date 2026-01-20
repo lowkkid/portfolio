@@ -1,0 +1,107 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.skills {
+  max-width: 90%;
+  margin: 0 auto;
+  @include m.flex-column;
+  align-items: center;
+  gap: 60px;
+
+  &__content {
+    width: 80%;
+    @include m.flex-column;
+    gap: 20px;
+  }
+
+  &__category {
+    border: 1px solid v.$white-darker;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: v.$orange-normal;
+    }
+  }
+
+  &__header {
+    @include m.flex-row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(v.$orange-normal, 0.1);
+    }
+
+    &.active {
+      background-color: rgba(v.$orange-normal, 0.05);
+
+      .skills__icon {
+        transform: rotate(45deg);
+        color: v.$orange-normal;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: v.$white-lightest;
+    margin: 0;
+    text-align: left;
+
+    @include m.mobile {
+      font-size: 28px;
+    }
+  }
+
+  &__icon {
+    font-size: 32px;
+    color: v.$white-dark;
+    font-weight: 300;
+    transition: transform 0.3s ease, color 0.3s ease;
+    line-height: 1;
+  }
+
+  &__list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    &.active {
+      max-height: 1000px;
+      padding: 20px 30px 20px 30px;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgba(v.$white-darker, 0.2);
+    color: v.$white-light;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(v.$orange-normal, 0.2);
+      color: v.$orange-normal;
+      transform: translateY(-2px);
+    }
+
+    @include m.mobile {
+      font-size: 18px;
+      padding: 10px 18px;
+    }
+  }
+}

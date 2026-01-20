@@ -1,10 +1,47 @@
-.header {
-  max-width: 90%;
+@use '../abstracts/mixins' as m;
 
-  margin: 30px auto;
+.header {
+  width: 70%;
+  margin: 0 auto;
 
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
+  gap: 60px;
+
+  > div:first-child {
+    flex-shrink: 0;
+    width: 0;
+  }
+
+  .navigation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  // Кнопка прижимается вправо с авто-отступом слева
+  .button {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  @include m.mobile {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 5%;
+
+    > div:first-child {
+      display: none;
+    }
+
+    .navigation {
+      width: 100%;
+    }
+
+    .button {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
 }

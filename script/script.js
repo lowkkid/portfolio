@@ -2,6 +2,7 @@ const WORKER_URL = 'https://lowkkid.dev/portfolio';
 
 const buttons = document.querySelectorAll('.button--download');
 const form = document.querySelector('form');
+const skillsHeaders = document.querySelectorAll('.skills__header');
 
 function getToastContainer() {
     let container = document.querySelector('.toast-container');
@@ -116,4 +117,14 @@ form.addEventListener('submit', async (e) => {
     } catch (error) {
         showErrorMessage(error.message);
     }
+});
+
+skillsHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+        const category = header.dataset.category;
+        const list = document.querySelector(`[data-list="${category}"]`);
+
+        header.classList.toggle('active');
+        list.classList.toggle('active');
+    });
 });

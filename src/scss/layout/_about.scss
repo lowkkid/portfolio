@@ -1,8 +1,61 @@
 @use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+@use "../abstracts/functions" as f;
 
 .about {
   max-width: 90%;
   margin: 0 auto;
   @include m.flex-column;
   align-items: center;
+  gap: 60px;
+
+  &__content {
+    width: 80%;
+    @include m.flex-row;
+    gap: 80px;
+
+    align-items: center;
+    justify-content: center;
+
+    @include m.mobile {
+      @include m.flex-column;
+      gap: 40px;
+    }
+  }
+
+  &__image {
+
+    flex: 0 0 40%;
+    max-width: 500px;
+    @include m.flex-center;
+
+    @include m.mobile {
+      flex: 0 0 auto;
+      max-width: 300px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  &__text {
+    flex: 1;
+    @include m.flex-column;
+    gap: 16px;
+  }
+
+  &__paragraph {
+    line-height: 1.7;
+    color: v.$white-dark-hover;
+    font-size: 20px;
+
+    strong {
+      color: v.$orange-normal;
+      font-weight: 700;
+    }
+  }
 }

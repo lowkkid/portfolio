@@ -5,7 +5,7 @@
 
 .hero {
   max-width: 90%;
-  margin: 30px auto;
+  margin: 0 auto;
   @include m.flex-row;
   justify-content: space-around;
   align-items: center;
