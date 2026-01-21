@@ -7,16 +7,39 @@
   @include m.flex-column;
   align-items: center;
   gap: 3rem;
+
+  @include m.laptop {
+    gap: 2.5rem;
+  }
+
+  @include m.tablet {
+    gap: 2rem;
+  }
+
+  @include m.mobile {
+    gap: 24px;
+  }
 }
 
 .services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-
   width: 80%;
-  @include m.mobile {
-    grid-template-columns: 1fr;
+
+  @include m.laptop {
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    width: 85%;
+  }
+
+  @include m.tablet {
+    gap: 1.5rem;
+    width: 95%;
+  }
+
+  @include m.mobile {
+    gap: clamp(8px, 2vw, 16px);
+    width: 100%;
   }
 }

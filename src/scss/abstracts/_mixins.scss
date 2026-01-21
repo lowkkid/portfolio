@@ -6,6 +6,30 @@
   }
 }
 
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: #{$breakpoint-laptop}) {
+    @content;
+  }
+}
+
+@function clamp-calc($min-size, $max-size, $min-width: 430, $max-width: 1440) {
+  $slope: calc(($max-size - $min-size) / ($max-width - $min-width));
+  $intersection: calc($min-size - $slope * $min-width);
+
+  @return clamp(
+          #{$min-size}px,
+          #{$intersection}rem + #{$slope * 100}vw,
+          #{$max-size}px
+  );
+}
+
+
 @mixin flex-center {
   display: flex;
   align-items: center;

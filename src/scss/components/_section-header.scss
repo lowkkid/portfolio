@@ -11,11 +11,49 @@
     font-size: f.rem(40);
     color: v.$white-light;
 
+    @include m.laptop {
+      font-size: f.rem(36);
+    }
+
+    @include m.tablet {
+      font-size: f.rem(32);
+    }
+
+    @include m.mobile {
+      font-size: f.rem(24);
+    }
   }
 
   &__description {
     font-weight: 500;
     font-size: f.rem(20);
     color: v.$white-dark-active;
+
+    @include m.laptop {
+      font-size: f.rem(18);
+    }
+
+    @include m.tablet {
+      font-size: f.rem(16);
+      text-align: center;
+    }
+
+    @include m.mobile {
+      font-size: f.rem(14);
+      text-align: center;
+      line-height: 1.6;
+    }
+  }
+
+  @include m.laptop {
+    gap: 10px;
+  }
+
+  @include m.tablet {
+    gap: 12px;
+  }
+
+  @include m.mobile {
+    gap: 14px;
   }
 }
