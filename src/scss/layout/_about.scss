@@ -10,6 +10,8 @@
   gap: 60px;
 
   &__content {
+    max-width: 1600px;
+
     width: 80%;
     @include m.flex-row;
     gap: 80px;

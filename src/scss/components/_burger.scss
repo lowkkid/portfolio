@@ -1,0 +1,42 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+
+  @include m.tablet {
+    display: flex;
+  }
+
+  &__line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: v.$white-dark-hover;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  &--active {
+    .burger__line:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .burger__line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .burger__line:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+}

@@ -3,7 +3,6 @@
 
 body {
   background-color: v.$background;
-  padding-top: 30px;
   @include m.flex-column;
   gap: 50px;
 }

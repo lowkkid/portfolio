@@ -1,51 +1,87 @@
 @use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
 
 .header {
-  width: 70%;
+  position: relative;
+  max-width: 90%;
   margin: 0 auto;
+  padding: 30px 0;
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 60px;
 
-  > div:first-child {
-    flex-shrink: 0;
-    width: 0;
+  @include m.laptop {
+    gap: 40px;
   }
 
-  .navigation {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-
-  // Кнопка прижимается вправо с авто-отступом слева
-  .button {
-    flex-shrink: 0;
-    margin-left: auto;
+  @include m.tablet {
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px 0;
+    width: 90%;
   }
 
   @include m.mobile {
-    flex-direction: column;
-    gap: 20px;
-    padding: 15px 5%;
+    padding: 20px 0;
+  }
 
-    > div:first-child {
-      display: none;
+  &__navigation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    .navigation__list {
+      @include m.laptop {
+        font-size: 18px;
+        gap: 40px;
+      }
     }
 
-    .navigation {
-      width: 100%;
+    @include m.tablet {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: auto;
+      padding: 40px 20px 30px;
+      background-color: v.$background;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1000;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+
+      &--active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .navigation__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        font-size: 1.125rem;
+      }
     }
 
-    .button {
-      margin-left: 0;
-      width: 100%;
+    @include m.mobile {
+      padding: 70px 20px 25px;
+
+      .navigation__list {
+        gap: 20px;
+        font-size: 1rem;
+      }
     }
   }
 
   .button {
+    flex-shrink: 0;
     font-size: 16px;
   }
+
+
 }

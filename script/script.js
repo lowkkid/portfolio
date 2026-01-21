@@ -3,6 +3,8 @@ const WORKER_URL = 'https://lowkkid.dev/portfolio';
 const buttons = document.querySelectorAll('.button--download');
 const form = document.querySelector('form');
 const skillsHeaders = document.querySelectorAll('.skills__header');
+const burger = document.querySelector('.burger');
+const headerNav = document.querySelector('.header__navigation');
 
 function getToastContainer() {
     let container = document.querySelector('.toast-container');
@@ -128,3 +130,20 @@ skillsHeaders.forEach(header => {
         list.classList.toggle('active');
     });
 });
+
+if (burger && headerNav) {
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('burger--active');
+        headerNav.classList.toggle('header__navigation--active');
+        burger.setAttribute('aria-expanded',
+            burger.classList.contains('burger--active'));
+    });
+
+    headerNav.querySelectorAll('.navigation__link').forEach(link => {
+        link.addEventListener('click', () => {
+            burger.classList.remove('burger--active');
+            headerNav.classList.remove('header__navigation--active');
+            burger.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
