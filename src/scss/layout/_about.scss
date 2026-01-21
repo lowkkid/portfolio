@@ -14,24 +14,43 @@
     @include m.flex-row;
     gap: 80px;
 
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
-    @include m.mobile {
+    @include m.laptop {
+      width: 90%;
       @include m.flex-column;
+      align-items: center;
+      gap: 50px;
+    }
+
+    @include m.tablet {
+      width: 95%;
       gap: 40px;
+    }
+
+    @include m.mobile {
+      width: 100%;
+      gap: 30px;
     }
   }
 
   &__image {
-
     flex: 0 0 40%;
     max-width: 500px;
     @include m.flex-center;
 
-    @include m.mobile {
+    @include m.laptop {
       flex: 0 0 auto;
-      max-width: 300px;
+      max-width: 400px;
+    }
+
+    @include m.tablet {
+      max-width: 350px;
+    }
+
+    @include m.mobile {
+      max-width: 280px;
     }
   }
 
@@ -52,6 +71,16 @@
     line-height: 1.7;
     color: v.$white-dark-hover;
     font-size: 20px;
+    text-align: left;
+
+    @include m.tablet {
+      font-size: 18px;
+    }
+
+    @include m.mobile {
+      font-size: 16px;
+      text-align: left;
+    }
 
     strong {
       color: v.$orange-normal;
