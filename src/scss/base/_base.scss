@@ -5,6 +5,8 @@ body {
   background-color: v.$background;
   @include m.flex-column;
   gap: 50px;
+  position: relative;
+
 }
 
 main {

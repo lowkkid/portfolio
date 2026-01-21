@@ -2,7 +2,6 @@
 @use '../abstracts/variables' as v;
 
 .header {
-  position: relative;
   max-width: 90%;
   margin: 0 auto;
   padding: 30px 0;
@@ -40,12 +39,12 @@
     }
 
     @include m.tablet {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100vw;
       height: auto;
-      padding: 40px 20px 30px;
+      padding: 40px 0 30px;
       background-color: v.$background;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       z-index: 1000;
@@ -69,7 +68,7 @@
     }
 
     @include m.mobile {
-      padding: 70px 20px 25px;
+      padding: 40px 20px 25px;
 
       .navigation__list {
         gap: 20px;
