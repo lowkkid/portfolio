@@ -6,12 +6,40 @@
   margin: 0 auto;
   @include m.flex-column;
   align-items: center;
-  gap: 60px;
+  gap: 3rem;
+
+  @include m.laptop {
+    gap: 2.5rem;
+  }
+
+  @include m.tablet {
+    gap: 2rem;
+  }
+
+  @include m.mobile {
+    gap: 24px;
+  }
 
   &__content {
+    max-width: 1400px;
     width: 80%;
     @include m.flex-column;
     gap: 20px;
+
+    @include m.laptop {
+      width: 85%;
+      gap: 16px;
+    }
+
+    @include m.tablet {
+      width: 95%;
+      gap: 14px;
+    }
+
+    @include m.mobile {
+      width: 100%;
+      gap: 12px;
+    }
   }
 
   &__category {
@@ -34,6 +62,14 @@
     user-select: none;
     transition: background-color 0.3s ease;
 
+    @include m.tablet {
+      padding: 16px 24px;
+    }
+
+    @include m.mobile {
+      padding: 14px 16px;
+    }
+
     &:hover {
       background-color: rgba(v.$orange-normal, 0.1);
     }
@@ -55,8 +91,12 @@
     margin: 0;
     text-align: left;
 
+    @include m.tablet {
+      font-size: 20px;
+    }
+
     @include m.mobile {
-      font-size: 28px;
+      font-size: 18px;
     }
   }
 
@@ -66,6 +106,14 @@
     font-weight: 300;
     transition: transform 0.3s ease, color 0.3s ease;
     line-height: 1;
+
+    @include m.tablet {
+      font-size: 28px;
+    }
+
+    @include m.mobile {
+      font-size: 24px;
+    }
   }
 
   &__list {
@@ -77,9 +125,27 @@
     flex-wrap: wrap;
     gap: 12px;
 
+    @include m.tablet {
+      padding: 0 24px;
+      gap: 10px;
+    }
+
+    @include m.mobile {
+      padding: 0 16px;
+      gap: 8px;
+    }
+
     &.active {
       max-height: 1000px;
-      padding: 20px 30px 20px 30px;
+      padding: 20px 30px;
+
+      @include m.tablet {
+        padding: 16px 24px;
+      }
+
+      @include m.mobile {
+        padding: 14px 16px;
+      }
     }
   }
 
@@ -93,15 +159,26 @@
     transition: all 0.3s ease;
     cursor: pointer;
 
+    @include m.laptop {
+      padding: 7px 14px;
+      font-size: 15px;
+    }
+
+    @include m.tablet {
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+
+    @include m.mobile {
+      padding: 6px 10px;
+      font-size: 13px;
+      border-radius: 4px;
+    }
+
     &:hover {
       background-color: rgba(v.$orange-normal, 0.2);
       color: v.$orange-normal;
       transform: translateY(-2px);
-    }
-
-    @include m.mobile {
-      font-size: 18px;
-      padding: 10px 18px;
     }
   }
 }
