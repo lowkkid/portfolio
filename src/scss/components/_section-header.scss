@@ -3,6 +3,8 @@
 @use "../abstracts/functions" as f;
 
 .section-header {
+  max-width: 90%;
+
   @include m.flex-column;
   align-items: center;
 

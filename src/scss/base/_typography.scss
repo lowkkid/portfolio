@@ -30,14 +30,3 @@ h2 {
   background-clip: text;
   color: transparent;
 }
-
-.button {
-  font-weight: 700;
-  font-size: f.rem(20);
-  color: v.$white-dark-hover;
-  display: inline-block;
-}
-
-.header .button {
-  font-size: f.rem(16);
-}

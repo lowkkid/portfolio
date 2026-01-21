@@ -1,19 +1,43 @@
-  @use "../abstracts/variables" as v;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
 
-  .button {
-    border-radius: 8px;
-    padding: 12px 40px;
-    cursor: pointer;
+.button {
+  text-align: center;
+  font-weight: 700;
+  font-size: f.rem(18);
+  color: v.$white-dark-hover;
+  display: inline-block;
 
-    &--primary {
-      background: linear-gradient(90deg, #FD6F00 0%, #E46400 100%);
-      background-clip: padding-box;
-      color: v.$white-lightest;
-      border: 2px transparent solid;
-    }
+  border-radius: 8px;
+  padding: 12px 40px;
+  cursor: pointer;
 
-    &--secondary {
-      background-color: transparent;
-      border: 2px solid v.$white-dark-hover;
+  @include m.tablet {
+    padding: 10px 32px;
+    font-size: 15px;
+  }
+
+  @include m.mobile {
+    padding: 10px 24px;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+
+  &--primary {
+    background: linear-gradient(90deg, #FD6F00 0%, #E46400 100%);
+    background-clip: padding-box;
+    color: v.$white-lightest;
+    border: 2px solid transparent;
+
+  }
+
+  &--secondary {
+    background-color: transparent;
+    border: 2px solid v.$white-dark-hover;
+
+    @include m.mobile {
+      border: 1px solid v.$white-dark-hover;
     }
   }
+}

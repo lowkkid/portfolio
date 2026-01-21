@@ -10,5 +10,5 @@ body {
 
 main {
   @include m.flex-column;
-  gap: clamp(20px, 1.25rem + 5.33vw, 100px)
+  gap: clamp(50px, 4.55vw + 31.8px, 120px);
 }
