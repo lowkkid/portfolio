@@ -9,4 +9,14 @@
   @include m.flex-column;
   align-items: center;
   gap: 50px;
+
+  @include m.tablet {
+    padding: 40px 30px 24px 30px;
+    gap: 40px;
+  }
+
+  @include m.mobile {
+    padding: 30px 20px 20px 20px;
+    gap: 30px;
+  }
 }

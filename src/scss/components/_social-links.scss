@@ -7,6 +7,16 @@
   &__icon {
     height: 40px;
     width: 40px;
+
+    @include m.tablet {
+      height: 36px;
+      width: 36px;
+    }
+
+    @include m.mobile {
+      height: 32px;
+      width: 32px;
+    }
   }
 }
 
