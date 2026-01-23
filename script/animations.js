@@ -45,53 +45,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateStats();
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const statsSection = document.querySelector('.hero__stats');
-if (statsSection) {
-    statsObserver.observe(statsSection);
-}
-
-function animateStats() {
-    const statNumbers = document.querySelectorAll('.hero__stat-number');
-
-    statNumbers.forEach(stat => {
-        const finalText = stat.textContent;
-        const finalNum = parseInt(finalText);
-
-        if (isNaN(finalNum)) return;
-
-        const suffix = finalText.replace(/[\d]/g, '');
-        const duration = 1500;
-        const startTime = performance.now();
-
-        function updateNumber(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-
-            const easeProgress = 1 - Math.pow(1 - progress, 3);
-            const currentNum = Math.floor(easeProgress * finalNum);
-
-            stat.textContent = currentNum + suffix;
-
-            if (progress < 1) {
-                requestAnimationFrame(updateNumber);
-            } else {
-                stat.textContent = finalText;
-            }
-        }
-
-        requestAnimationFrame(updateNumber);
-    });
-}
-
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 if (prefersReducedMotion.matches) {
