@@ -43,14 +43,18 @@
   &__input,
   &__textarea {
     background-color: #1e1e1e;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 8px;
     padding: 16px 20px;
     color: v.$white-light;
     font-family: v.$font-family-main;
     font-size: 16px;
     outline: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    transition: background-color 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.3s ease;
 
     @include m.tablet {
       padding: 14px 18px;
@@ -65,14 +69,24 @@
 
     &::placeholder {
       color: #6b6b6b;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
     &:hover {
       background-color: #232323;
+      border-color: rgba(v.$orange-normal, 0.2);
     }
 
     &:focus {
       background-color: #252525;
+      border-color: v.$orange-normal;
+      box-shadow: 0 0 20px rgba(v.$orange-normal, 0.15),
+                  0 4px 12px rgba(0, 0, 0, 0.1);
+
+      &::placeholder {
+        color: #888;
+        transform: translateX(5px);
+      }
     }
   }
 
@@ -84,6 +98,10 @@
     resize: vertical;
     min-height: 120px;
     width: 100%;
+
+    &:focus {
+      transform: scale(1.01);
+    }
 
     @include m.tablet {
       min-height: 100px;

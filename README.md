@@ -1,8 +1,8 @@
-# Senior Java Developer Portfolio
+ljf# Senior Java Developer Portfolio 💼
 
 A modern, dark-themed portfolio website showcasing full-stack development expertise with a focus on Java backend development, complemented by T-shaped skills in React frontend and DevOps practices.
 
-## Live Demo
+## 🌐 Live Demo
 
 [View Live Website](https://lowkkid.dev)
 
@@ -10,7 +10,7 @@ A modern, dark-themed portfolio website showcasing full-stack development expert
 
 This portfolio is designed for hiring managers and potential freelance clients, demonstrating the ability to handle the complete software development lifecycle independently - from backend architecture to frontend implementation and deployment automation.
 
-## Tech Stack
+## 🛠 Tech Stack
 
 ### Frontend
 - **HTML5** - Semantic markup
@@ -24,8 +24,19 @@ This portfolio is designed for hiring managers and potential freelance clients, 
 ### DevOps
 - **GitHub Actions** - Automated CI/CD pipeline
 - **SSH Deployment** - Secure automated deployment to production server
+## 📱 Responsive Design
 
-## Architecture & Code Quality
+The website is fully adaptive and optimized for all screen sizes:
+
+| Device | Breakpoint |
+|--------|------------|
+| Mobile | ≤ 430px |
+| Tablet | ≤ 768px |
+| Laptop | ≤ 1024px |
+| Desktop | > 1024px |
+
+
+## 🏗 Architecture & Code Quality
 - **7-1 SCSS Pattern** - Professional stylesheet organization with clear separation of concerns
 - **BEM Methodology** - Maintainable and scalable CSS architecture using Block Element Modifier naming conventions
 - **Modular Components** - Reusable UI components with consistent design patterns

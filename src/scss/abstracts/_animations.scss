@@ -1,0 +1,387 @@
+@use "variables" as v;
+
+:root {
+  --animation-duration-fast: 0.3s;
+  --animation-duration-normal: 0.5s;
+  --animation-duration-slow: 0.8s;
+  --animation-duration-slower: 1.2s;
+  --animation-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --animation-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --animation-easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(v.$orange-normal, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(v.$orange-normal, 0.5), 0 0 60px rgba(v.$orange-normal, 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes backgroundShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(10px, -20px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-5px, -40px) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(15px, -60px) rotate(270deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes underlineExpand {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes cardLift {
+  from {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  to {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes textReveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity var(--animation-duration-slow) var(--animation-easing),
+              transform var(--animation-duration-slow) var(--animation-easing);
+
+  &.animate-fade-up {
+    transform: translateY(40px);
+  }
+
+  &.animate-fade-down {
+    transform: translateY(-30px);
+  }
+
+  &.animate-fade-left {
+    transform: translateX(-40px);
+  }
+
+  &.animate-fade-right {
+    transform: translateX(40px);
+  }
+
+  &.animate-scale {
+    transform: scale(0.95);
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+.stagger-children {
+  > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--animation-duration-normal) var(--animation-easing),
+                transform var(--animation-duration-normal) var(--animation-easing);
+  }
+
+  &.is-visible > * {
+    opacity: 1;
+    transform: translateY(0);
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{$i * 0.08}s;
+      }
+    }
+  }
+}
+
+
+@mixin animate-fade-in($duration: var(--animation-duration-normal), $delay: 0s) {
+  animation: fadeIn $duration var(--animation-easing) $delay forwards;
+}
+
+@mixin animate-fade-up($duration: var(--animation-duration-normal), $delay: 0s) {
+  animation: fadeInUp $duration var(--animation-easing) $delay forwards;
+}
+
+@mixin animate-scale-in($duration: var(--animation-duration-normal), $delay: 0s) {
+  animation: scaleIn $duration var(--animation-easing-bounce) $delay forwards;
+}
+
+@mixin animate-pop-in($duration: var(--animation-duration-normal), $delay: 0s) {
+  animation: popIn $duration var(--animation-easing-bounce) $delay forwards;
+}
+
+@mixin hover-lift($distance: -5px) {
+  transition: transform var(--animation-duration-fast) var(--animation-easing),
+              box-shadow var(--animation-duration-fast) var(--animation-easing);
+
+  &:hover {
+    transform: translateY($distance);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@mixin hover-glow($color: v.$orange-normal) {
+  transition: box-shadow var(--animation-duration-fast) var(--animation-easing);
+
+  &:hover {
+    box-shadow: 0 0 20px rgba($color, 0.4), 0 0 40px rgba($color, 0.2);
+  }
+}
+
+@mixin underline-hover {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: v.$orange-normal;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--animation-duration-fast) var(--animation-easing);
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@mixin gradient-text-animated {
+  background: linear-gradient(
+    90deg,
+    v.$orange-normal,
+    #ff9500,
+    v.$orange-normal
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 3s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+
+  .stagger-children > * {
+    opacity: 1;
+    transform: none;
+  }
+}

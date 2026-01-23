@@ -11,6 +11,7 @@
           rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="./script/script.js"></script>
+    <script defer src="./script/animations.js"></script>
 </head>
 <body>
 <header class="header">
@@ -43,45 +44,46 @@
 
 <main>
     <section class="hero" id="hero">
-        <div class="hero__content">
-            <div class="hero__body">
-                <div class="hero__header">
-                    <div class="hero__text">
-                        <div class="hero__intro">
-                            <span class="hero__greeting">Hi! I am</span>
-                            <h1 class="hero__name">Vladislav Shikunov</h1>
-                        </div>
+        <div class="hero__left">
+            <div class="hero__intro">
+                <span class="hero__greeting">Hi! I am</span>
+                <h1 class="hero__name">Vladislav Shikunov</h1>
+            </div>
 
-                        <h2 class="hero__title">Senior Java Developer (Full Stack + DevOps)</h2>
-                    </div>
+            <h2 class="hero__title">Senior Java Developer (Full Stack + DevOps)</h2>
 
-                    <ul class="social-links">
-                        <li class="social-links__item">
-                            <a class="social-links__link"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               href="https://www.linkedin.com/in/uladzislau-shykunou/">
-                                <img class="social-links__icon"
-                                     src="./img/linkedin.png"
-                                     alt="LinkedIn">
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a class="social-links__link"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               href="https://github.com/lowkkid">
-                                <img class="social-links__icon"
-                                     src="./img/git.png"
-                                     alt="Github">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="hero__actions">
-                    <a class="button button--primary">Hire Me</a>
-                    <button class="button button--secondary button--download">Download CV</button>
-                </div>
+            <ul class="social-links">
+                <li class="social-links__item">
+                    <a class="social-links__link"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       href="https://www.linkedin.com/in/uladzislau-shykunou/">
+                        <img class="social-links__icon"
+                             src="./img/linkedin.png"
+                             alt="LinkedIn">
+                    </a>
+                </li>
+                <li class="social-links__item">
+                    <a class="social-links__link"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       href="https://github.com/lowkkid">
+                        <img class="social-links__icon"
+                             src="./img/git.png"
+                             alt="Github">
+                    </a>
+                </li>
+            </ul>
+
+            <div class="hero__actions">
+                <a href="#contact" class="button button--primary">Hire Me</a>
+                <button class="button button--secondary button--download">Download CV</button>
+            </div>
+        </div>
+
+        <div class="hero__right">
+            <div class="hero__image">
+                <img src="img/me.png" alt="Vladislav Shikunov" class="hero__img">
             </div>
 
             <div class="hero__stats">
@@ -98,11 +100,6 @@
                     <span class="hero__stat-text">Client satisfaction</span>
                 </div>
             </div>
-
-        </div>
-
-        <div class="hero__image">
-            <img src="img/me.png" alt="Vladislav Shikunov" class="hero__img">
         </div>
     </section>
 
@@ -115,36 +112,34 @@
 
         <div class="about__content">
             <div class="about__image">
-                <img src="img/me.png" alt="Vladislav Shikunov" class="about__img">
+                <img src="img/dev.png" alt="Vladislav Shikunov" class="about__img">
             </div>
 
-            <div class="about__text">
-                <p class="about__paragraph">
-                    T-Shaped Java Developer with <strong>5.5 years of commercial experience</strong> delivering robust, scalable
-                    applications in Agile environments. Worked in teams ranging from 4 to 20 members, both remotely
-                    and on-site, managing the full development cycle from gathering requirements to establishing fully
-                    automated release processes.
-                </p>
+            <p class="about__paragraph">
+                T-Shaped Java Developer with <strong>5.5 years of commercial experience</strong> delivering robust, scalable
+                applications in Agile environments. Worked in teams ranging from 4 to 20 members, both remotely
+                and on-site, managing the full development cycle from gathering requirements to establishing fully
+                automated release processes.
+            </p>
 
-                <p class="about__paragraph">
-                    Extensive experience in developing and maintaining <strong>high-load, scalable backend
-                    systems</strong>, including performance optimization and ensuring system resilience under peak
-                    traffic. Established CI/CD pipelines with high test coverage and detailed analytics for production
-                    monitoring.
-                </p>
+            <p class="about__paragraph">
+                Extensive experience in developing and maintaining <strong>high-load, scalable backend
+                systems</strong>, including performance optimization and ensuring system resilience under peak
+                traffic. Established CI/CD pipelines with high test coverage and detailed analytics for production
+                monitoring.
+            </p>
 
-                <p class="about__paragraph">
-                    As a <strong>T-shaped engineer</strong>, combines deep Java expertise with practical knowledge in
-                    <strong>React frontend development</strong> and <strong>DevOps practices</strong>. Handles the complete software development lifecycle
-                    independently and deliver end-to-end solutions.
-                </p>
+            <p class="about__paragraph">
+                As a <strong>T-shaped engineer</strong>, combines deep Java expertise with practical knowledge in
+                <strong>React frontend development</strong> and <strong>DevOps practices</strong>. Handles the complete software development lifecycle
+                independently and deliver end-to-end solutions.
+            </p>
 
-                <p class="about__paragraph">
-                    Gained hands-on experience with AI integration for intelligent features, always staying current
-                    with emerging technologies while maintaining a focus on delivering reliable, production-ready
-                    solutions.
-                </p>
-            </div>
+            <p class="about__paragraph">
+                Gained hands-on experience with AI integration for intelligent features, always staying current
+                with emerging technologies while maintaining a focus on delivering reliable, production-ready
+                solutions.
+            </p>
         </div>
     </section>
 

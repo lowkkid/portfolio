@@ -8,10 +8,47 @@
   font-size: f.rem(18);
   color: v.$white-dark-hover;
   display: inline-block;
+  position: relative;
+  overflow: hidden;
 
   border-radius: 8px;
   padding: 12px 40px;
   cursor: pointer;
+
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s ease;
+    pointer-events: none;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    transition-duration: 0.1s;
+  }
 
   @include m.tablet {
     padding: 10px 32px;
@@ -30,14 +67,62 @@
     color: v.$white-lightest;
     border: 2px solid transparent;
 
+    &:hover {
+      box-shadow: 0 8px 25px rgba(253, 111, 0, 0.35),
+                  0 4px 10px rgba(253, 111, 0, 0.2);
+    }
+
+    &:active {
+      box-shadow: 0 4px 15px rgba(253, 111, 0, 0.3);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(90deg, #FD6F00, #ff9500, #FD6F00);
+      background-size: 200% auto;
+      border-radius: 10px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      animation: buttonGlow 2s ease infinite;
+    }
   }
 
   &--secondary {
     background-color: transparent;
     border: 2px solid v.$white-dark-hover;
 
+    &:hover {
+      border-color: v.$orange-normal;
+      color: v.$orange-normal;
+      box-shadow: 0 8px 25px rgba(253, 111, 0, 0.15),
+                  inset 0 0 20px rgba(253, 111, 0, 0.05);
+    }
+
+    &:active {
+      background-color: rgba(253, 111, 0, 0.1);
+    }
+
     @include m.mobile {
       border: 1px solid v.$white-dark-hover;
     }
+  }
+}
+
+@keyframes buttonGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }

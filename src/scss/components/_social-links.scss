@@ -1,12 +1,71 @@
 @use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
 
 .social-links {
   @include m.flex-row;
   gap: 20px;
 
+  .hero & {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease 0.8s forwards;
+  }
+
+  &__item {
+    opacity: 0;
+    animation: socialPopIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{0.9 + ($i * 0.1)}s;
+      }
+    }
+
+    .hero & {
+      animation-delay: #{0.9}s;
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{0.9 + ($i * 0.1)}s;
+        }
+      }
+    }
+
+    .footer & {
+      opacity: 1;
+      animation: none;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px) scale(1.1);
+      background: rgba(v.$orange-normal, 0.15);
+      box-shadow: 0 8px 20px rgba(v.$orange-normal, 0.2);
+    }
+
+    &:active {
+      transform: translateY(-2px) scale(1.05);
+    }
+  }
+
   &__icon {
     height: 40px;
     width: 40px;
+    transition: filter 0.3s ease;
+
+    .social-links__link:hover & {
+      filter: brightness(1.2) drop-shadow(0 0 8px rgba(v.$orange-normal, 0.5));
+    }
 
     @include m.tablet {
       height: 36px;
@@ -20,3 +79,24 @@
   }
 }
 
+@keyframes socialPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
